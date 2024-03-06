@@ -1,0 +1,19 @@
+<!-- web/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple API Request</title>
+</head>
+<body>
+    <h1>Message from API: <span id="apiMessage">Loading...</span></h1>
+    <script>
+        // Update the fetch URL to point to your deployed API.
+        fetch('http://localhost:3000/api/message')
+            .then(response => response.json())
+            .then(data => document.getElementById('apiMessage').innerText = data.message)
+            .catch(error => console.error('Error:', error));
+    </script>
+</body>
+</html>
